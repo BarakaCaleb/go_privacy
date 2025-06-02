@@ -4,10 +4,11 @@ import (
 	"os"
 
 	"github.com/rwcarlsen/goexif/exif"
+	"github.com/rwcarlsen/goexif/tiff"
 )
 
 func ReadEXIF(filepth string) (map[string]string, error) {
-	f, err := os.Open(filePath)
+	f, err := os.Open(filepth)
 	if err != nil {
 		return nil, err
 	}
@@ -27,7 +28,7 @@ func ReadEXIF(filepth string) (map[string]string, error) {
 
 type exifWalker map[string]string
 
-func (w exifWalker) Walk(name exif.FieldName, val *exif.Tag) error {
-	w[string(name)] = val.String()
+func (w exifWalker) Walk(name exif.FieldName, tag *tiff.Tag) error {
+	w[string(name)] = tag.String()
 	return nil
 }
