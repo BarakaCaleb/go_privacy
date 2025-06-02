@@ -1,0 +1,36 @@
+# =========================
+# GoPrivacy .gitignore
+# =========================
+
+# Binaries
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# Build output
+bin/
+build/
+dist/
+
+# IDEs & editors
+.vscode/
+.idea/
+*.swp
+
+# Dependency directories
+vendor/
+
+# Logs
+*.log
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Environment files (API keys, secrets)
+.env
+.env.*

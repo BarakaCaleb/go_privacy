@@ -26,9 +26,9 @@ export default function MetadataPreview() {
     formData.append("file", file)
 
     try {
-      const res = await axios.post("http://localhost:8080/preview", formData)
+      const res = await axios.post(`${import.meta.env.VITE_API_URL}/clean`, formData)
       setMetadata(res.data)
-    } catch (err) {
+    } catch {
       setError("Failed to read metadata.")
     } finally {
       setLoading(false)
